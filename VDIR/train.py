@@ -6,7 +6,7 @@ import pytorch_lightning as pl
 import torch.functional as F
 import torch.nn as nn
 
-from omegaconfig import OmegaConf
+from omegaconf import OmegaConf, DictConfig
 from torch.utils.data import DataLoader
 
 from tqdm import tqdm
@@ -19,16 +19,16 @@ class vdir_train(pl.LightningModule):
         VDIR Training Module
     """
 
-    def __init__(self, hparams: dict, train_loader: DataLoader,
+    def __init__(self, hparams: DictConfig, train_loader: DataLoader,
                  val_loader: DataLoader, test_loader: DataLoader,):
         """
             Initialize the VDIR training module
             Args:
-                hparams: (dict)
+                hparams: (DictConfig)
         """
         super().__init__()
         self.hparams = hparams
-        self.num_epochs = hparams['VDIR']['NUM_EPOCHS']
+        self.num_epochs = self.hparams.num_epochs
         self.learning_rate = self.hparams["VDIR"]["LR"]
         self.height, self.width, self.channels = hparams['VDIR']['INPUT_SHAPE']
         self.batch_size = self.hparams["VDIR"]["BATCH_SIZE"]
@@ -68,4 +68,4 @@ class vdir_train(pl.LightningModule):
         """
             Custom loss function
         """
-        self.
+        pass

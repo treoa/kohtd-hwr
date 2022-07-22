@@ -1,0 +1,9 @@
+batch_size: 128
+checkpoint: None
+checkpoint_path: "./VDIR/checkpoint/"
+data_path: "../VDIR/data/"
+input_shape: [256, 256, 1] # [height, width, channel]
+label_path: = "./VDIR/data"
+lr: 0.001 # learning rate
+num_epochs: 100
+step_size: 0
