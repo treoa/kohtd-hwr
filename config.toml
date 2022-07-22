@@ -1,0 +1,14 @@
+CONFIG_PATH = "./config.toml"
+
+[VDIR]
+BATCH_SIZE = 100
+CHECKPOINT = ""
+CHECKPOINT_PATH = "./VDIR/checkpoint/"
+DATA_PATH = "../VDIR/data/"
+INPUT_SHAPE = [256, 256, 1] # [height, width, channel]
+LABEL_PATH = "./VDIR/data"
+LR = 0.001
+
+LR = 0.001 # learning rate
+NUM_EPOCHS = 100 
+STEP_SIZE = 0
